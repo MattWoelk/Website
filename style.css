@@ -1,0 +1,36 @@
+body {
+  margin: 2em auto;
+  padding: 0em;
+  text-align: center;
+  color: #eee;
+  background-color: #292929;
+  max-width: 45em; /* Using em's because I'm cool like that */
+}
+
+h1 {
+  text-align:left;
+  margin: 0.5em;
+  font-size: 1.8em;
+}
+
+section.content {
+  width: 90%;
+  margin: 0em auto;
+  text-align: left;
+}
+
+a:link {
+  color: #0067C2;
+}
+
+a:visited {
+  color: #728FA8;
+}
+
+a:hover {
+  color: #0285F7
+}
+
+a:active {
+  color: #7AC1FF;
+}

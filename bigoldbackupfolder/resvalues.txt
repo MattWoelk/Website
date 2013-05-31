@@ -1,0 +1,8 @@
+
+10Ω, 12Ω, 15Ω, 18Ω, 22Ω, 27Ω, 33Ω, 39Ω, 47Ω, 56Ω, 68Ω, 82Ω 
+
+and their multiplication by 10 until 10MΩ, for instance: 180Ω, 1.8kΩ, 18kΩ, 
+
+180kΩ, 
+
+1.8MΩ 

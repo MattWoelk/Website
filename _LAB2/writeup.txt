@@ -1,0 +1,31 @@
+1) I encoded a solution by first generating a random state of sets (a set being a single solution of components in two bins, and a state being a number of sets). Values for Cost (an inverse of 'fitness' based on the number of jumps between bins and difference between number of components in the bins) we obtained for each set in the state. The sets were then organized from lowest cost to highest cost, and the probability of a set being chosen was weighted in favor of low cost, and was used to generate the next state.
+
+New states were created as follows:
+-The two best sets from the previous state were added to the new state.
+-Two states were selected (using their calculated probability of being selected) 
+-These two states were copied and then they were swap some of their data (above/below a randomly selected pivot point)
+-This data was then mutated a select amount (which was weighted to be higher at the start of the algorithm, and decrease as time went by) and then added to the new state.
+
+This iterated an selected amount of times.
+
+The algorithm ran as expected. The cost values at the start of the program were higher and fluctuated more than the cost values at the end of the program. This suggests that the algorithm converged toward the end. 
+
+
+2) An average percent improvement from the initial solution to the converged one was around 10% for the benchmark test. The best score that I got with a random list of connections was a 30% improvement of cost over the initial solution.
+
+3) The algorithm took very little time to run.It took 161ms for a problem of size 10x10, and 733ms for 20x20. This suggests non-linear time. 
+
+4) Varying the initial population size affects the running time exponentially. 
+
+5) My algorithm could be improved by further manipulation of the changeable parameters (labeled by: //PARAMETERS in the code). This included the number of mutations with relation to the time, the weighting of probability of selection for the combining sets, the size of the initial population, and the cost function. 
+
+A heuristic which could also be implemented would be to iterate to the newly generated set only if it's overall cost function was less than the previous one. 
+
+6) The mutation calculation I used to see how many bits should be mutated was (int)0.002*current + 1, where 'current' is the current iteration that the algorithm is on. The mutated bits were inverted. 
+
+7) I did not do a formal calculation for performance as a function of problem size. I would say that it was exponential. 
+
+
+All of the code was written by me.
+
+

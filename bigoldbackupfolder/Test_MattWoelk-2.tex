@@ -1,0 +1,314 @@
+%This tex file is based off of Asgn1-2009.tex from the course webpage
+\documentclass[a4paper,12pt]{article}
+
+% Declaration section
+
+\usepackage{fullpage}
+\usepackage{alltt}
+\usepackage{picins}
+\usepackage{floatflt,graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage[all,arc,curve,color,frame,matrix,arrow,curve,cmtip]{xy}
+\usepackage{subfigure}
+\usepackage{amsmath}
+\usepackage{pgf}
+\usepackage{xcolor}
+
+
+\hypersetup{linktocpage=true,colorlinks=true,linkcolor=blue,citecolor=blue,pdfpagemode=UseNone,pdfstartview={XYZ 1000 1000 1}}
+
+\title{Assignment One}
+\author{Matthew Woelk, ID 6840262\\ \href{mailto:umwoelk@cc.umanitoba.ca}{umwoelk@cc.umanitoba.ca}}
+
+
+
+% Begin document environment
+\begin{document}
+	\definecolor{Brown}{cmyk}{0,0.81,1,0.60}
+	\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+	\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+	\definecolor{magenta}{cmyk}{0.1,0.8,0,0.1}
+% Set up title page.  Notice that the title page has no page number.
+
+
+
+
+
+\maketitle
+\thispagestyle{empty}
+
+% Set up TOC for title page.
+\tableofcontents
+
+% Start a new page after the TOC.
+\newpage
+
+
+
+% Begin absract environment.
+\begin{abstract} 
+This report provides a brief introduction to Systems Engineering.  It takes a look at a few of the main organizations on the topic including IEEE, IET, and INCOSE.  Differing definitions of the topic are also be discussed, and an example of an embedded system is provided.\\
+
+{\bf Keywords}: IEEE, IET, INCOSE, System Engineering, SE. 
+
+% Exit from abstract environment.
+\end{abstract}
+
+
+
+\section*{Introduction}
+
+
+
+
+\section{Plotting Normal Distributions}
+
+\lstset{language=Matlab,
+	basicstyle=\footnotesize, 
+	keywordstyle=\ttfamily\color{CadetBlue},tabsize=2, 
+	identifierstyle=\ttfamily\color{Brown}\bfseries,
+	commentstyle=\color{OliveGreen},
+	commentstyle=\color{blue},
+	stringstyle=\ttfamily,
+	showstringspaces=false,
+	backgroundcolor=\color{yellow}
+}
+\begin{lstlisting}[numbers=left,firstnumber=1,label=lst1]
+close all; clear; clc;
+t = -8:0.1:8;
+sigma = 0.5;
+average = 2;
+f = (1./(sigma.*sqrt(2.*pi))).*exp(-((t-average).^2)./(2.*(sigma.^2)));
+sigma = 1;
+average = 0;
+g = (1./(sigma.*sqrt(2.*pi))).*exp(-((t-average).^2)./(2.*(sigma.^2)));
+sigma = 2;
+average = -2;
+h = (1./(sigma.*sqrt(2.*pi))).*exp(-((t-average).^2)./(2.*(sigma.^2)));
+
+plot(t,f,t,g,t,h)
+xlabel('x')
+ylabel('N(x, mean, sd)')
+title('normal distribution')
+\end{lstlisting}
+
+\begin{center}
+\begin{figure}[ht]
+	\begin{center}
+		\caption{Plot of Normal Distributions}
+		\includegraphics[width=13cm]{figure1.png}
+	\end{center}
+	\label{fig1}
+\end{figure}
+\end{center}
+
+Figure \ref{fig1} shows the function $\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\bar{x})^{2}}{2\sigma^2}}$, with inerval $-8 \leq x \leq 8$ and $\bar{x},\sigma = 2, 0.5; 0, 1; -2, 2$, respectively. The code for this graph is shown in listing \ref{lst1}.
+%~\cite{IEEE}.
+
+
+
+
+\section{Topical Problems}
+
+\begin{figure}[!ht]
+ \begin{center}
+  \subfigure[Chopin minute]{\label{fig:mid}
+\xygraph{
+	!{<0cm,0cm>;<1cm,0cm>:<0cm,1cm>::}
+	!{(0,0) }*+{\bullet_{1}}="1"
+	!{(3,0) }*+{\bullet_{2}}="2"
+	!{(6,0) }*+{\bullet_{3}}="3"
+	!{(10,0) }*+{\bullet_{4}}="4"
+	!{(13,0) }*+{\bullet_{5}}="5"
+	"1" :"2"
+	"2" :"3"
+	"3" :"4"^{lion}
+	"4" :"5"^{2009}
+	"1" :@/^2pc/"3"^{msg}
+	"1":@(u,ld)"1"
+	"2":@(d,ld)"2"^(0.2){wait~30~ms}
+	"4":@(d,ld)"4"^(0.2){wait~50~ms}
+	"5":@(d,ld)"5"^(0.2){wait~80~ms}
+	}}\qquad
+  \put (10,0){\subfigure{\label{fig:22}\includegraphics[width=20mm]{lion}}}
+	\put (-500,0){\subfigure{\label{fig:23}\includegraphics[width=20mm]{lion}}}
+ \end{center}
+ \caption{Sample Plots of Midi Files}
+ \label{fig:sound} 
+\end{figure}
+
+
+
+
+The main topic in this report is system engineering.  The answers related to this topic are given in the following subsections.
+
+\section{}
+
+\begin{align*}
+	Al &= \{1 \longrightarrow (1,2), 1 \longrightarrow 2, 1 \longrightarrow 1\} \\
+	A2 &= \{1 \longrightarrow (2,3), 1 \longrightarrow (1,2,3,2),\\
+	&  1 \longrightarrow (1,2,3,2,3), 1 \longrightarrow (1,3,2,3),\\
+	&  1 \longrightarrow (1,3,2,3,2), 1 \longrightarrow 3, 1 \longrightarrow (1,3),\\
+	&  1 \longrightarrow (1,2,3) \} \\
+	A3 &= \{3 \longrightarrow 2, 3 \longrightarrow (2,3), 3 \longrightarrow (2,3,2),\\
+	&  1 \longrightarrow (2,3,2), 1 \longrightarrow (1,3,2), 1 \longrightarrow (1,3,2) \} \\
+	A4 &= \{2 \longrightarrow (3,2,3), 2 \longrightarrow 3, 2 \longrightarrow (3,2) \} \\
+	B &= \{1 \longrightarrow 2, 1 \longrightarrow 1, 2 \longrightarrow 3,\\
+	&  1 \longrightarrow 3, 1 \longrightarrow (1,3), 2 \longrightarrow (3,2),\\
+	&  1 \longrightarrow (1,2,3), 3 \longrightarrow 2, 3 \longrightarrow (2,3)\}\\
+	A1 \cap B &= \{1 \longrightarrow 2, 1 \longrightarrow 1\} \\
+	A2 \cap B &= \{1 \longrightarrow 3, 1 \longrightarrow (1,3), 1 \longrightarrow (1,2,3)\}\\
+	A3 \cup B &= \{1 \longrightarrow (2,3,2,3), 1 \longrightarrow (2,3,2), \\
+	&  1 \longrightarrow (1,3,2), 3 \longrightarrow (2,3), 3 \longrightarrow 2,\\
+	&  1 \longrightarrow (2,3,2), 1 \longrightarrow 3, 1 \longrightarrow (1,3),\\
+	&  1 \longrightarrow (1,2,3) \} \\
+	A4 \cup B &= \{1 \longrightarrow 3, 1 \longrightarrow (1,3), 1 \longrightarrow (1,2,3), \\
+	&  1 \longrightarrow (2,3), 1 \longrightarrow (1,2,3,2),\\
+	&  1 \longrightarrow (1,2,3,2,3), 1 \longrightarrow (1,3,2,3),\\
+	&  1 \longrightarrow (1,3,2,3,2) \} \\
+\end{align*}
+
+
+\section{}
+
+\begin{align*}
+Pr(A1) &= 3/20 \\
+Pr(A2) &= 2/5 \\
+Pr(A3) &= 3/10 \\
+Pr(A4) &= 3/20 \\
+Pr(B) &= 9/20 \\
+Pr(A1\cap B) &= 1/10 \\
+Pr(A2\cap B) &= 3/20 \\
+Pr(A3\cup B) &= 9/20 \\
+Pr(A4\cup B) &= 3/20 \\
+\end{align*}
+
+\section{}
+
+\begin{align*}
+Pr(A1 | B) &= 2/9 \\
+Pr(A2 | B) &= 1/3 \\
+Pr(A3 | B) &= 2/9 \\
+Pr(A4 | B) &= 2/9 \\
+Pr( (A1 \cup A2) | B) &= 5/9 \\
+Pr( (A1 \cup A3) | B) &= 4/9 \\
+Pr( (A1 \cup A4) | B) &= 4/9 \\
+Pr( (A2 \cup A3) | B) &= 5/9 \\
+Pr( (A2 \cup A4) | B) &= 5/9 \\
+Pr( (B \cup A2) | A1) &= 2/3 \\
+Pr( (B \cup A3) | A2) &= 3/8 \\
+Pr( (A1 \cup A2 \cup A3) | B) &= 7/9 \\
+Pr( (B \cup A1 \cup A2) | A3) &= 1/3 \\
+\end{align*}
+
+\section{}
+
+\begin{pgfpicture}{0cm}{0cm}{10cm}{8cm} 
+\pgfrect[stroke]{\pgfpoint{0cm}{0cm}}{\pgfpoint{10cm}{8cm}} 
+%\pgfcircle[fill]{\pgfpoint{3cm}{1cm}}{10pt} 
+%\pgfline{\pgfpoint{0cm}{0cm}}{\pgfpoint{4cm}{1.5cm}}
+
+\pgfmoveto{\pgfxy(2,4)} 
+\pgfcurveto{\pgfxy(3.3,6)}{\pgfxy(4,8)}{\pgfxy(4,8)}
+\pgfmoveto{\pgfxy(2,4)}
+\pgfcurveto{\pgfxy(0.6,2)}{\pgfxy(0,2)}{\pgfxy(0,2)}
+\pgfmoveto{\pgfxy(2,4)}
+\pgfcurveto{\pgfxy(3.5,4)}{\pgfxy(5,0)}{\pgfxy(5,0)}
+\pgfmoveto{\pgfxy(3.5,3)}
+\pgfcurveto{\pgfxy(5,5)}{\pgfxy(6,6)}{\pgfxy(10,5)}
+\pgfstroke
+
+%A4
+\pgfputat{\pgfxy(1.5,1)}{\pgfbox[center,center]{$2 \to (3,2,3)$}}
+\pgfputat{\pgfxy(2.5,3.3)}{\pgfbox[center,center]{$2 \to 3$}}
+\pgfputat{\pgfxy(2.6,2.8)}{\pgfbox[center,center]{$2 \to (3,2)$}}
+%A1
+\pgfputat{\pgfxy(2,5)}{\pgfbox[center,center]{$1 \to 1$}}
+\pgfputat{\pgfxy(1.7,4.5)}{\pgfbox[center,center]{$1 \to 2$}}
+\pgfputat{\pgfxy(2,7)}{\pgfbox[center,center]{$1 \to (1,2)$}}
+%A2
+\pgfputat{\pgfxy(5,7.5)}{\pgfbox[center,center]{$1 \to (2,3)$}}
+\pgfputat{\pgfxy(5,7)}{\pgfbox[center,center]{$1 \to (1,2,3,2)$}}
+\pgfputat{\pgfxy(5,6.5)}{\pgfbox[center,center]{$1 \to (1,2,3,2,3)$}}
+\pgfputat{\pgfxy(8,7.5)}{\pgfbox[center,center]{$1 \to (1,3,2,3)$}}
+\pgfputat{\pgfxy(8.2,7)}{\pgfbox[center,center]{$1 \to (1,3,2,3,2)$}}
+\pgfputat{\pgfxy(4,4.5)}{\pgfbox[center,center]{$1 \to 3$}}
+\pgfputat{\pgfxy(4,5)}{\pgfbox[center,center]{$1 \to (1,3)$}}
+\pgfputat{\pgfxy(4.2,5.5)}{\pgfbox[center,center]{$1 \to (1,2,3)$}}
+%A3
+
+%\pgfsetdash{{3pt}{3pt}{0pt}}
+
+
+\pgfellipse[stroke]{\pgfxy(4,4)}{\pgfxy(3,0)}{\pgfxy(0,2)}
+\pgfstroke
+\end{pgfpicture} 
+
+%\begin{pgfpicture}{0cm}{0cm}{5cm}{2cm} 
+%\pgfmoveto{\pgfxy(0,1)} 
+%\pgfcurveto{\pgfxy(1,0.5)}{\pgfxy(1,1.5)}{\pgfxy(2,1)} 
+%\pgfstroke 
+%%\pgfsetdash{{3pt}{3pt}}{0pt} 
+%\pgfmoveto{\pgfxy(0,1)} 
+%\pgflineto{\pgfxy(1,0.5)} 
+%\pgflineto{\pgfxy(1,1.5)} 
+%\pgflineto{\pgfxy(2,1)} 
+%\pgfstroke 
+%
+%\pgfmoveto{\pgfxy(3,1)} 
+%\pgfcurveto{\pgfxy(3,0)}{\pgfxy(4,0)}{\pgfxy(4,1)} 
+%\pgfcurveto{\pgfxy(4,2)}{\pgfxy(3,2)}{\pgfxy(3,1)} 
+%\pgfclosepath 
+%%\pgfsetdash{{3pt}{3pt}{0pt}}
+%\pgfstroke
+%\end{pgfpicture}
+
+\section{Conclusion}
+
+\newpage
+\addcontentsline{toc}{section}{References}
+\begin{thebibliography}{100}
+	
+\bibitem{wiki} Systems Engineering at Wikipedia.org: \url{http://en.wikipedia.org/wiki/Systems_engineering}
+
+\bibitem{INCOSE-UK} INCOSE-UK: \url{http://www.incose.org.uk/}
+
+\bibitem{INCOSE-US} INCOSE-US plus others: \url{http://www.incose.org/chapters/websites.aspx}
+
+\bibitem{regions}: INCOSE geographic regions:\\
+\url{http://www.incose.org/chapters/geographic.aspx}
+
+\bibitem{SEns} North Star Chapter SE definition: \url{http://www.incose.org/northstar/images/Trifold%20Flyer%20Contents.doc}
+
+\bibitem{SEdef} INCOSE SE definition: \url{http://www.incose.org/practice/whatissystemseng.aspx}
+
+\bibitem{UKdef} INCOSE UK definition of SE: \url{http://www.incose.org.uk/Downloads/z4-Leafletv0_1.doc}
+
+\bibitem{steth} Calvin College electronic stethoscope project: \url{http://knightvision.calvin.edu/bbcswebdav/orgs/ENGR/senior-projects/2007-08/Team06/downloads/T06_Final_Report.pdf}
+
+\bibitem{IET} IET: \url{http://www.theiet.org/about/today/index.cfm}
+
+\bibitem{IEEE} IEEE: \url{http://www.ieee.org/portal/site}
+
+\bibitem{Inspec} Inspec: \url{http://www.theiet.org/publishing/inspec/index.cfm}
+
+\bibitem{IET-Mission} IET Mission: \url{http://www.theiet.org/about/today/vision/index.cfm}
+
+\bibitem{802.11} IEEE 802.11 standard: \url{http://standards.ieee.org/getieee802/802.11.html}
+
+\bibitem{ieeesmc} IEEE SMC \url{http://www.ieeesmc.org/}
+
+\end{thebibliography}
+
+
+
+%\section*{Matthew Woelk}
+%\addcontentsline{toc}{section}{Brief Biography}
+%$\put(0,0){\parbox{.7\linewidth}{
+%Matthew Woelk was born in Winnipeg, Manitoba, which increased his family's size by 33\%.   His high-school years were spent playing music, being in dramas, and being co-president at his school.  He now is taking studies at the University of Manitoba to become a certified Computer Engineer.  Most of Matthew's time outside of school is spent being a youth leader, an improv coach, in a ska band, and spent making little programs in any computer language he can get his hands on. (He says that the purpose of these computer programs is to help him accomplish tasks more quickly, but we all know that he does it mostly for the fun of it.)  Matt doesn't know where he wants to end up in the future, but he knows that finding out is going to be quite a ride.}
+%}$
+%$\put(330,-100){\includegraphics[width=5cm]{pose.jpg}}$
+
+\end{document}
+%-----------------------------------------------------

@@ -1,0 +1,58 @@
+1)The object is to allocate components into two racks of equipment, minimizing the degree of interconnect. 
+
+Review the course notes for a detailed example albeit very small. 
+
+In this lab if you choose this problem make sure you use a considerably larger problem.
+
+I have included an adjacency matrix in the appendix that can be used as a benchmark. Complete problem specification can be found in the notes. 
+
+
+
+Questions: 
+1) Did the algorithm run as expected? How did you encode a solution? 
+2)What was your maximum score solution? What was the percent improvement from and original or initial “solution”. 
+3)How long did the algorithm take to run?If you doubled the size of your problem did the running time scale linearly, quadratically or by some other means? 
+4) Vary the initial population size. How did this affect the running time? 
+5) How might your basic algorithm be improved? 
+6) What was the mutation operation you used? 
+7) What was the performance as a function of problem size? 
+
+
+
+Appendix: Adjacency list of component connectivity. cij represents the number of connections between component i and component j. 
+
+
+0 0 7 4 0 0 3 0 0 8 0 0 6 0 0 0 9 0 0 1 
+0 0 6 0 0 5 2 2 0 0 0 9 0 0 8 7 0 7 0 0 
+7 6 0 0 0 3 0 0 0 8 0 6 0 0 9 0 0 0 0 5 
+4 0 0 0 2 0 0 0 9 0 8 0 0 4 0 8 0 0 9 0 
+0 0 0 2 0 0 3 0 0 4 0 4 6 0 0 0 5 0 6 0 
+0 5 3 0 0 0 0 4 0 0 0 9 0 0 2 0 0 0 0 0 
+3 0 0 2 3 0 0 0 0 0 7 0 7 0 0 7 0 0 2 3 
+0 2 0 0 0 4 0 0 0 0 0 4 0 0 5 0 0 6 0 0 
+0 0 0 9 0 0 0 0 0 7 0 0 0 8 0 0 0 0 5 0 
+8 0 8 0 4 0 0 0 7 0 6 0 6 0 0 6 0 5 0 7 
+0 0 0 8 0 0 7 0 0 6 0 0 0 4 0 0 5 0 0 0 
+0 9 6 0 4 9 0 4 0 0 0 0 0 7 0 0 0 8 0 0 
+6 0 0 0 6 0 7 0 0 6 0 0 0 0 0 9 0 5 0 7 
+0 0 0 4 0 0 0 0 8 0 4 7 0 0 0 0 0 0 0 0 
+0 8 9 0 0 2 0 5 0 0 0 0 0 0 0 0 8 0 0 0 
+0 7 0 8 0 0 7 0 0 6 0 0 9 0 0 0 0 0 5 9 
+9 0 0 0 5 0 0 0 0 0 5 0 0 0 8 0 0 0 0 3 
+0 7 0 0 0 0 0 6 0 5 0 8 5 0 0 0 0 0 5 0 
+0 0 0 9 6 0 2 0 5 0 0 0 0 0 0 5 0 5 0 0 
+1 0 5 0 0 0 3 0 0 7 0 0 7 0 0 9 3 0 0 0
+
+
+
+
+
+
+
+
+
+
+0 0 7 4 0 0 3 0 0 8 0 0 6 0 0 0 9 0 0 1 0 0 6 0 0 5 2 2 0 0 0 9 0 0 8 7 0 7 0 0 7 6 0 0 0 3 0 0 0 8 0 6 0 0 9 0 0 0 0 5 4 0 0 0 2 0 0 0 9 0 8 0 0 4 0 8 0 0 9 0 0 0 0 2 0 0 3 0 0 4 0 4 6 0 0 0 5 0 6 0 0 5 3 0 0 0 0 4 0 0 0 9 0 0 2 0 0 0 0 0 3 0 0 2 3 0 0 0 0 0 7 0 7 0 0 7 0 0 2 3 0 2 0 0 0 4 0 0 0 0 0 4 0 0 5 0 0 6 0 0 0 0 0 9 0 0 0 0 0 7 0 0 0 8 0 0 0 0 5 0 8 0 8 0 4 0 0 0 7 0 6 0 6 0 0 6 0 5 0 7 0 0 0 8 0 0 7 0 0 6 0 0 0 4 0 0 5 0 0 0 0 9 6 0 4 9 0 4 0 0 0 0 0 7 0 0 0 8 0 0 6 0 0 0 6 0 7 0 0 6 0 0 0 0 0 9 0 5 0 7 0 0 0 4 0 0 0 0 8 0 4 7 0 0 0 0 0 0 0 0 0 8 9 0 0 2 0 5 0 0 0 0 0 0 0 0 8 0 0 0 0 7 0 8 0 0 7 0 0 6 0 0 9 0 0 0 0 0 5 9 9 0 0 0 5 0 0 0 0 0 5 0 0 0 8 0 0 0 0 3 0 7 0 0 0 0 0 6 0 5 0 8 5 0 0 0 0 0 5 0 0 0 0 9 6 0 2 0 5 0 0 0 0 0 0 5 0 5 0 0 1 0 5 0 0 0 3 0 0 7 0 0 7 0 0 9 3 0 0 0
+
+
+
