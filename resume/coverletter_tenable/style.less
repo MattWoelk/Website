@@ -1,0 +1,129 @@
+@pink: #ff887d;
+@blue: #5fa6c9;
+@green: #7dc45f;
+
+strong {
+    color: @blue;
+}
+
+.date {
+    font-weight: 200;
+    float: right;
+}
+
+i:before{
+    color: @green;
+    margin: 0 0 0 0.35em;
+}
+
+a {
+    color: @green;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+body {
+    font-size: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+body > header {
+    margin: 0 auto;
+    max-width: 22em;
+
+    h1 {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 200;
+        text-align: center;
+
+        span {
+            color: @blue;
+        }
+    }
+
+    #address{
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 200;
+        list-style: none;
+        padding: 0;
+        text-align: center;
+    }
+
+    #links{
+        list-style: none;
+        padding: 0;
+        text-align: center;
+
+        li {
+            margin: 0 0 0 0.5em;
+            display: inline;
+        }
+    }
+
+    p {
+        text-align: center;
+    }
+}
+
+body > section {
+    margin: 0 auto;
+    max-width: 30em;
+
+    & > h1 {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 400;
+        color: @blue;
+        position: relative;
+
+        &:after {
+            content: "";
+            display: block;
+            background-color: @blue;
+            width: 7.5em;
+            height: 0.8em;
+            position: absolute;
+            left: -8em;
+            top: 0.2em;
+        }
+    }
+
+    & > p {
+        text-indent: 2em;
+
+        & * {
+            text-indent: 0;
+        }
+    }
+
+    & > section {
+        margin: 0 auto;
+
+        h1 {
+            font-weight: 200;
+        }
+
+        li {
+            clear: both;
+        }
+
+        ul {
+            padding-left: 10%;
+        }
+
+        section {
+            margin-left: 2%;
+        }
+    }
+
+    & > ul {
+        list-style: none;
+        padding-left: 1em;
+    }
+}
+
+footer {
+    font-size: 0.8em;
+    margin-top: 2em;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 200;
+}
